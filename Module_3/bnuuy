@@ -19,9 +19,9 @@ class Bunny
 
 class BunnyInheritance : Bunny //this creates a bunny that inherits the values from the public class
 {
-  public bool likesCarrots = true //this makes this new bunny always like carrots
+  public bool LovesCarrots = true //this makes this new bunny always like carrots
 }
 
 Console.WriteLine($"Your bunny's name is {Name}");
-Console.WriteLine($"Does your bunny like carrots?: {LikesCarrots}");
+Console.WriteLine($"Does your bunny like carrots?: {LovesCarrots}");
 Console.WriteLine($"Does your bunny like people?: {LikesHumans}");
