@@ -1,5 +1,27 @@
 using System;
 
-public class Bunny
+class Bunny
 {
-  
+   public string Name;
+   public bool LikesCarrots;
+   public bool LikesHumans;
+
+  Bunny (
+    string name,
+    bool likesCarrots = false,
+    bool likesHumans = false)
+  {
+    Name = name;
+    LikesCarrots = likesCarrots;
+    LikesHumans = likesHumans; 
+  }
+}
+
+class BunnyInheritance : Bunny //this creates a bunny that inherits the values from the public class
+{
+  public bool likesCarrots = true //this makes this new bunny always like carrots
+}
+
+Console.WriteLine($"Your bunny's name is {Name}");
+Console.WriteLine($"Does your bunny like carrots?: {LikesCarrots}");
+Console.WriteLine($"Does your bunny like people?: {LikesHumans}");
