@@ -1,5 +1,4 @@
-
-  class Division
+ class Division
   {
     static void Main(string[] args)
     {
