@@ -64,6 +64,7 @@ public class Program
 
   public static void PopulateDictionary(Dictionary<string, List<string>> dictionary)
   {
+    // This part allows you to add keys to the dictionary
     Console.Write("Enter a key to add: ");
     string key = Console.ReadLine();
 
@@ -98,6 +99,7 @@ public class Program
 
   public static void RemoveKey(Dictionary<string, List<string>> dictionary)
   {
+    //this is for removing keys
     Console.Write("Enter the key to remove: ");
     string key = Console.ReadLine();
 
@@ -113,6 +115,7 @@ public class Program
 
   public static void AddNewKeyValue(Dictionary<string, List<string>> dictionary)
   {
+    //this is for adding new keys to the dictionary
     Console.Write("Enter a new key to add: ");
     string key = Console.ReadLine();
 
@@ -138,6 +141,7 @@ public class Program
 
     public static void AddValueToExistingKey(Dictionary<string, List<string>> dictionary)
     {
+        //this is for editing pre-existing keys
         Console.Write("Enter the key to update: ");
         string key = Console.ReadLine();
 
@@ -156,6 +160,7 @@ public class Program
 
     public static void SortKeys(Dictionary<string, List<string>> dictionary)
     {
+      //this is so you can change how the keys are sorted
       Console.WriteLine("\nDictionary Sorted by Keys:");
       var sortedKeys = dictionary.Keys.OrderBy(k => k).ToList();
       foreach (var key in sortedKeys)
