@@ -1,14 +1,14 @@
 using System;
 
-// Contractor class to represent general contractor information
+// contractor class
 class Contractor
 {
-    // Properties to store contractor information
+    // holds contractor info
     public string Name { get; set; }
     public int Number { get; set; }
     public DateTime StartDate { get; set; }
 
-    // Constructor to initialize contractor information
+    // constructs initial info
     public Contractor(string name, int number, DateTime startDate)
     {
         Name = name;
@@ -17,37 +17,37 @@ class Contractor
     }
 }
 
-// Subcontractor class derived from Contractor class
+// subclass for contractor (subcontractor. get it?
 class Subcontractor : Contractor
 {
-    // Properties to store additional subcontractor information
+    // uses this to store the extra info
     public int Shift { get; set; }
-    public double HrlyRate { get; set; }
+    public double HourlyRate { get; set; }
 
-    // Constructor to initialize subcontractor information, leveraging base class constructor
-    public Subcontractor(string name, int number, DateTime startDate, int shift, double hrlyRate)
+    // constructor for using the subcontractor information
+    public Subcontractor(string name, int number, DateTime startDate, int shift, double hourlyRate)
         : base(name, number, startDate)
     {
         Shift = shift;
-        HrlyRate = hrlyRate;
+        HourlyRate = hourlyRate;
     }
 
-    // Method to calculate pay with shift differential for night shift
+    // This is for calculating pay for night shift
     public float CalcPay()
     {
-        // Applying a 3% shift differential for night shift (Shift = 2)
+        // night shift bonus calculated here
         float shiftDiff = (Shift == 2) ? 0.03f : 0f;
-        return (float)(HrlyRate * (1 + shiftDiff));
+        return (float)(HourlyRate * (1 + shiftDiff));
     }
 }
 
-// Program class containing the entry point of the application
+// Application begins here with the program class
 class Program
 {
-    // Main method where the program execution begins
+    
     static void Main()
     {
-        // User input to create a subcontractor
+        // Subcontractor is created here via inputs
         Console.WriteLine("Enter subcontractor details:");
 
         Console.Write("Name: ");
@@ -65,18 +65,18 @@ class Program
         Console.Write("Hourly Pay Rate: ");
         double hourlyRate = double.Parse(Console.ReadLine());
 
-        // Creating a Subcontractor object
+        // object for the subcontractor
         Subcontractor subcontractor = new Subcontractor(name, number, startDate, shift, hourlyRate);
 
-        // Displaying subcontractor information
+        // when subcontractor is created, this displays the information for it
         Console.WriteLine($"\nSubcontractor Information:");
         Console.WriteLine($"Name: {subcontractor.Name}");
         Console.WriteLine($"Number: {subcontractor.Number}");
         Console.WriteLine($"Start Date: {subcontractor.StartDate.ToShortDateString()}");
         Console.WriteLine($"Shift: {subcontractor.Shift}");
-        Console.WriteLine($"Hourly Pay Rate: {subcontractor.HrlyRate:C}");
+        Console.WriteLine($"Hourly Pay Rate: {subcontractor.HourlyRate:C}");
 
-        // Calculating and displaying pay
+        // math for figuring out pay
         float pay = subcontractor.CalcPay();
         Console.WriteLine($"Pay: {pay:C}");
     }
